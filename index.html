@@ -3,13 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Camp 18May</title>
-    <style></style>
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="src/style.css">
 </head>
-<body>
-    
+<body class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-fuchsia-700 p-6 md:p-10 flex justify-center items-start">
+
+    <div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center justify-center md:col-span-2">
+            <h1 id="current-time" class="text-[2.75rem] text-indigo-500 font-light tracking-wide mb-1">00:00:00</h1>
+            <p id="current-date" class="text-gray-500 text-sm mb-4">Loading date...</p>
+            <h2 id="greeting" class="text-xl font-bold text-gray-800">Good Morning</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+            
+            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center">
+                <h3 class="text-lg font-bold text-gray-800 mb-6">Focus Timer</h3>
+                <div id="timer-display" class="text-[3.5rem] text-indigo-500 font-light mb-6">25:00</div>
+                <div class="flex space-x-3">
+                    <button id="btn-start" class="bg-indigo-500 text-white px-5 py-2 rounded-md shadow-sm text-sm hover:bg-indigo-600 transition">Start</button>
+                    <button id="btn-stop" class="bg-gray-200 text-gray-700 px-5 py-2 rounded-md shadow-sm text-sm hover:bg-gray-300 transition">Stop</button>
+                    <button id="btn-reset" class="bg-gray-200 text-gray-700 px-5 py-2 rounded-md shadow-sm text-sm hover:bg-gray-300 transition">Reset</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Quick Links</h3>
+                <div class="flex flex-col sm:flex-row w-full gap-2 mb-5">
+                    <input id="link-name" type="text" placeholder="Link name" class="w-full sm:w-1/3 min-w-0 border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-indigo-400">
+                    <input id="link-url" type="text" placeholder="URL" class="flex-1 min-w-0 border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-indigo-400">
+                    <button id="btn-add-link" class="shrink-0 bg-indigo-500 text-white px-4 py-2 rounded-md text-sm hover:bg-indigo-600 transition whitespace-nowrap">Add Link</button>
+                </div>
+                <div id="links-container" class="flex flex-wrap gap-2"></div>
+            </div>
+
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Tasks</h3>
+            <div class="flex w-full gap-3 mb-6">
+                <input id="task-input" type="text" placeholder="Add a new task..." class="flex-1 min-w-0 border border-indigo-300 rounded-md px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 placeholder-gray-400">
+                <button id="btn-add-task" class="shrink-0 bg-indigo-500 text-white px-5 py-2 rounded-md text-sm hover:bg-indigo-600 transition">Add</button>
+            </div>
+            <div id="tasks-container" class="flex flex-col gap-4"></div>
+        </div>
+
+    </div>
+    <script type="module" src="src/main.js" defer></script>
 </body>
-<script type="module">
-    
-</script>
+
 </html>
